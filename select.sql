@@ -8,7 +8,7 @@ SELECT * FROM Work WHERE "Work ID" IN (SELECT "Work ID" FROM Mark WHERE ("Date" 
 SELECT * FROM Mark WHERE (Mark > (SELECT AVG(Mark) FROM Mark) AND "Subject ID" = 3);
 
 --The query displays information about the mark, the date it was given, and the total number of marks given to the current date
-SELECT Mark, "Date", COUNT(mark) OVER (ORDER BY "Date") AS "Total" FROM Mark;
+SELECT Mark, "Date", COUNT(Mark) OVER (ORDER BY "Date") AS "Total" FROM Mark;
 
 --The query displays information about the mark, the date it was given, and the first and last name of the student who gave it
 SELECT Mark.Mark, Mark."Date", Student."Last name", Student."First name" FROM Student INNER JOIN "Mark" ON Mark."Student ID" = Student."Student ID";
