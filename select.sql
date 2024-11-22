@@ -2,7 +2,7 @@
 SELECT * FROM "Mark" WHERE "Subject ID" IN (SELECT "Subject ID" FROM "Subject" WHERE ("Technical" = 1));
 
 --The query displays information about the works that were earlier 03/01/2024
-SELECT * FROM "Work" WHERE "Work ID" IN (SELECT "Work ID" FROM "Mark" WHERE ("Date" < "2024-03-01"));
+SELECT * FROM "Work" WHERE "Work ID" IN (SELECT "Work ID" FROM "Mark" WHERE ("Date" < '2024-03-01'));
 
 --The query displays information about marks that are higher than the average and given by history
 SELECT * FROM "Mark" WHERE ("Mark" > (SELECT AVG("Mark") FROM "Mark") AND "Subject ID" = 3);
